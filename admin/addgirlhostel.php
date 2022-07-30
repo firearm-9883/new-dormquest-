@@ -32,8 +32,8 @@ session_start();
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.php">Home</a>
                 </div>
             </div>
-<div class="container mt-5"  style="margin-left:40px;margin-top: 20px;height:504px;margin-bottom:18px;">
-    <div class="alert-success" style="margin-top:20px;background-color:transparent;margin-left:200px;font-size:15px;">
+<div class="container mt-5"  style="margin-left:100px;margin-bottom:30rem;">
+    <div class="alert-success" style="margin-top:200px;background-color:transparent;margin-left:200px;font-size:15px;">
         <?php 
             if(isset($_SESSION['success'])){
                 echo $_SESSION['success'];
@@ -51,22 +51,20 @@ session_start();
     </div>
 
             <div id="page-content-wrapper">
-             
-                
-                         <h2 style="text-align:center;">ADD USER</h2>
-                           <form action="action.php" method="POST">
+                         <h2 style="text-align:center;">ADD GIRLS HOSTEL</h2>
+                           <form action="actionhostel.php" method="POST">
                                 <div class="form-group">
-                                     <label for="firstname" class="label"> Name</label>
-                                     <input type="text"name="firstname" id="firstname" placeholder="enter firstname" class="form-control">
+                                     <label for="address" class="label">location</label>
+                                     <input type="text"name="address" id="address" placeholder="location" class="form-control">
       
-                                     <label for="lastname" class="label"> Last Name</label>
-                                     <input type="text"name="lastname" id="lastname" placeholder="enter lastname" class="form-control">
-                                
-                                     <label for="email" class="label">Email</label>
-                                     <input type="email"name="email" id="email" placeholder="enter email" class="form-control">
+                                     <label for="hostel_name" class="label">Name</label>
+                                     <input type="text"name="hostel_name" id="hostel_name" placeholder="hostel name" class="form-control">
   
-                                     <label for="password" class="label">Password</label>
-                                     <input type="password" name="password"id="password" placeholder="password" class="form-control">
+                                     <label for="price" class="label">Price</label>
+                                     <input type="text" name="price"id="price" placeholder="hostel price" class="form-control">
+
+                                     <label for="hostel_image" class="label">Images</label>
+                                     <input type="file" name="hostel_image"id="hostel_image" class="form-control">
                                 </div>
 
                                     <input type="submit" value="add" name="submit" class="btn btn-primary" >

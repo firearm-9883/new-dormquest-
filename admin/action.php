@@ -1,15 +1,16 @@
 <?php
     include 'dbconnection.php';
-
+session_start();
     // var_dump($conn); die();
 
 //add user action
-    if(isset($_POST['adduser'])){
-        $username=$_POST['username'];
-        $useremail=$_POST['email'];
-        $userpass=$_POST['passeord'];
+    if(isset($_POST['submit'])){
+        $firstname=$_POST['firstname'];
+        $lastname=$_POST['lastname'];
+        $email=$_POST['email'];
+        $password=$_POST['password'];
 
-        $sql = "INSERT INTO user_info (username, email, password) VALUE ('$username', '$email', '$password')";
+        $sql = "INSERT INTO user_info (email, password,firstname,lastname) VALUE ( '$email', '$password','$firstname','$lastname')";
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "User added Successfully";
@@ -24,24 +25,23 @@
 
         mysqli_close($conn);
 
-
-
-
     }
 
 //update user action
 
-    if(isset($_POST['updateuser'])){
-        $username=$_POST['username'];
+    if(isset($_POST['display'])){
+        $firstname=$_POST['firstname'];
+        $lastname=$_POST['lastname'];
         $email=$_POST['email'];
-        $pass=$_POST['pass'];
+        $password=$_POST['password'];
         $user_id=$_POST['user_id'];
 
         $sql = "UPDATE user_info
-                    SET username = '$username',
+                    SET firstname = '$firstname',
+                    lastname = '$lastname',
                     email = '$email',
-                    password = '$pass'
-                    WHERE user_id = $userid ";
+                    password = '$password'
+                    WHERE user_id = $user_id ";
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "User updated Successfully";
@@ -55,17 +55,31 @@
         }
 
         mysqli_close($conn);
-
-
-
-
     }
 
+    //delete user action
 
+    if(isset($_POST['result'])){
+        $firstname=$_POST['firstname'];
+        $lastname=$_POST['lastname'];
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+        $user_id=$_POST['user_id'];
 
+        $sql = "DELETE FROM  user_info
+                    WHERE user_id = $user_id ";
 
+        if(mysqli_query($conn, $sql)){
+            $_SESSION['success'] = "User deleted Successfully";
+            header("Location:".$_SERVER['HTTP_REFERER']);
+        }
 
+        else{
+            $_SESSION['error'] = mysqli_error($conn);
+            header("Location:".$_SERVER['HTTP_REFERER']);
 
+        }
 
-
+        mysqli_close($conn);
+    }
 ?>

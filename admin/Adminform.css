@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: 0;
+    
+}
+body{
+    background: linear-gradient(45deg, #666, #b59fc4);
+	font-family: sans-serif;
+	font-weight: 100px;
+}
+form{
+    margin:40px;
+    justify-content:center;
+    margin-left:20rem;
+    width:20rem;
+}
+.form-group{
+    margin-left:20%;
+}
+h2{
+    padding-top:0px;
+}
+form input[type="text"]{
+    width:40rem;
+    margin-top:10px;
+    border-width: 2px;
+    border-color:gray;
+}
+form input[type="email"]{
+    width:40rem;
+    margin-top:10px;
+    border-width: 2px;
+    border-color:gray;
+}
+form input[type="password"]{
+    width:40rem;
+    margin-top:10px;
+    border-width: 2px;
+    border-color:gray;
+}
+form .label{
+    padding-top:10px;
+    padding-bottom: 0px;
+}
+ form .btn{
+text-align:center;
+margin-left:20rem ;
+width:10rem;
+margin-left:25%;
+margin-top:30px;
+background-color:gray;
+border-color:gray;
+}
+.btn:hover{
+    background-color:darkslategrey;
+    border:transparent;
+}
+.container {
+	position: absolute;
+    top:30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width:100px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 25px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+element.style {
+    background-color: transparent;
+    font-size: 15px;
+    margin-left: 0;
+}
