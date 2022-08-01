@@ -15,7 +15,7 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   
   <link rel="stylesheet" href="Adminform.css">
-  <link href="dist/css/styles.css" rel="stylesheet" />
+  <link href="dist/css/style.css" rel="stylesheet" />
 </head>
 <body>
 <div class="d-flex" id="wrapper">

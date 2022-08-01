@@ -15,7 +15,7 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   
   <link rel="stylesheet" href="Adminform.css">
-  <link href="dist/css/styles.css" rel="stylesheet" />
+  <link href="dist/css/style.css" rel="stylesheet" />
 </head>
 <body>
 <div class="d-flex" id="wrapper">
@@ -52,7 +52,7 @@ session_start();
 
             <div id="page-content-wrapper">
                          <h2 style="text-align:center;">ADD GIRLS HOSTEL</h2>
-                           <form action="actionhostel.php" method="POST">
+                           <form action="actionhostel.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                      <label for="address" class="label">location</label>
                                      <input type="text"name="address" id="address" placeholder="location" class="form-control">

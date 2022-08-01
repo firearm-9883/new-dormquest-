@@ -3,7 +3,7 @@
 include 'dbconnection.php';
 include 'include/head.php';
 
-$sql = "SELECT * FROM boy_hostel";
+$sql = "SELECT * FROM boy_hostel ";
 $result = mysqli_query($conn, $sql);
 
 $count=1;
@@ -12,8 +12,8 @@ if($result){
 ?>
 <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
-            <div class="border-end bg-white" id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom bg-light"><h1>ADMIN</h1></div>
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light"><h1>ADMIN</h1></div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="adduser.php" target="_self">Add user</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="Edituser.php">Users</a>
@@ -26,7 +26,7 @@ if($result){
             </div>
           <div id="page-content-wrapper">
            <div class="container" style="margin-left:20rem;">
-           <table>
+           <table style="margin-top:16rem;">
             <thead>
             <tr>
                 <th>S.NO</th>

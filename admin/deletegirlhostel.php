@@ -3,8 +3,8 @@ session_start();
 include 'dbconnection.php';
 include 'include/header.php';
 
-if(isset($_GET['girl_hostel_id'])){
-    $girl_hostel_id = $_GET['girl_hostel_id'];
+if(isset($_POST['girl_hostel_id'])){
+    $girl_hostel_id =$_POST['girl_hostel_id'];
 
     $sql = "SELECT * FROM girl_hostel WHERE girl_hostel_id = $girl_hostel_id";
 

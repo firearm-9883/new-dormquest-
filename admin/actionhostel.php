@@ -1,6 +1,8 @@
 <?php
-    include 'dbconnection.php';
-session_start();
+   include 'dbconnection.php';
+    session_start();
+ 
+
     // var_dump($conn); die();
 
 //add hostel action
@@ -8,9 +10,15 @@ session_start();
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
+        $hostel_image=$_FILES['hostel_image'];
+       $filename=$hostel_image['name'] ;
+       $filetemp=$hostel_image['tmp_name'];
 
-        $sql = "INSERT INTO boy_hostel (address,hostel_name,price,hostel_image) VALUE ( '$address', '$hostel_name','$price','$hostel_image')";
+       $destinationfile='upload/'.$filename;
+       move_uploaded_file($filetemp,$destinationfile);
+       
+
+        $sql = "INSERT INTO boy_hostel (address,hostel_name,price,hostel_image) VALUES ( '$address', '$hostel_name','$price','$destinationfile')";
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "hostel added Successfully";
@@ -29,18 +37,19 @@ session_start();
 
 //update hostel action
 
-    if(isset($_POST['display'])){
+    if(isset($_POST['update'])){
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
+        $boy_hostel_id=$_POST['boy_hostel_id'];
 
         $sql = "UPDATE boy_hostel
                     SET address = '$address',
                     hostel_name = '$hostel_name',
-                    price = '$price',
-                    hostel_image= '$hostel_image'
-                    WHERE boy_hostel_id = $boy_hostel_id ";
+                    price = '$price'
+                    WHERE boy_hostel_id=$boy_hostel_id";
+
+       var_dump($sql); die();
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "Hostel updated Successfully";
@@ -62,10 +71,11 @@ session_start();
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
+        $hostel_image=$_FILE['hostel_image'];
+        $boy_hostel_id=$_POST['boy_hostel_id'];
 
         $sql = "DELETE FROM  boy_hostel
-                    WHERE boy_hostel_id = $boy_hostel_id ";
+                    WHERE boy_hostel_id=$boy_hostel_id";
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "Hostel deleted Successfully";
@@ -91,9 +101,9 @@ session_start();
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
+        
 
-        $sql = "INSERT INTO girl_hostel (address,hostel_name,price,hostel_image) VALUE ( '$address', '$hostel_name','$price','$hostel_image')";
+        $sql = "INSERT INTO girl_hostel (address,hostel_name,price,hostel_image) VALUES ( '$address', '$hostel_name','$price','$destinationfile')";
 
         if(mysqli_query($conn, $sql)){
             $_SESSION['success'] = "Hostel added ";
@@ -116,13 +126,15 @@ session_start();
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
-
+        $hostel_image=$_FILE['hostel_image'];
+        $girl_hostel_id=$_POST['girl_hostel_id'];
+     
+ 
         $sql = "UPDATE girl_hostel
                     SET address = '$address',
                     hostel_name = '$hostel_name',
                     price = '$price',
-                    hostel_image= '$hostel_image'
+                    hostel_image= '$destinationfile'
                     WHERE girl_hostel_id = $girl_hostel_id ";
 
         if(mysqli_query($conn, $sql)){
@@ -145,8 +157,10 @@ session_start();
         $address=$_POST['address'];
         $hostel_name=$_POST['hostel_name'];
         $price=$_POST['price'];
-        $hostel_image=$_POST['hostel_image'];
-
+        $hostel_image=$_FILE['hostel_image'];
+        $girl_hostel_id=$_POST['girl_hostel_id'];
+       
+      
         $sql = "DELETE FROM  girl_hostel
                     WHERE girl_hostel_id = $girl_hostel_id ";
 

@@ -15,7 +15,7 @@ session_start();
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   
   <link rel="stylesheet" href="Adminform.css">
-  <link href="dist/css/styles.css" rel="stylesheet" />
+  <link href="dist/css/style.css" rel="stylesheet" />
 </head>
 <body>
 <div class="d-flex" id="wrapper">
@@ -52,7 +52,7 @@ session_start();
 
             <div id="page-content-wrapper">
                          <h2 style="text-align:center;">ADD BOYS HOSTEL</h2>
-                           <form action="actionhostel.php" method="POST">
+                           <form action="actionhostel.php" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                      <label for="address" class="label">location</label>
                                      <input type="text"name="address" id="address" placeholder="location" class="form-control">
@@ -62,8 +62,9 @@ session_start();
   
                                      <label for="price" class="label">Price</label>
                                      <input type="text" name="price"id="price" placeholder="hostel price" class="form-control">
-
-                                     <label for="hostel_image" class="label">Images</label>
+                                      
+                                     <
+                                     <label for="hostel_image" class="label" accept="hostel_image.jpeg,hostel_image.jpg,hostel_image.png,hostel_image.jfif">Images</label>
                                      <input type="file" name="hostel_image"id="hostel_image" class="form-control">
                                 </div>
 

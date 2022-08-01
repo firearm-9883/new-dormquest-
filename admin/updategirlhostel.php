@@ -6,7 +6,7 @@ include 'include/header.php';
 if(isset($_GET['girl_hostel_id'])){
     $girl_hostel_id = $_GET['girl_hostel_id'];
 
-    $sql= "SELECT * FROM girl_hostel WHERE girl_hostel_id= $girl_hostel_id";
+    $sql= "SELECT * FROM girl_hostel WHERE girl_hostel_id=$girl_hostel_id";
 
     $result = mysqli_query($conn, $sql);
     if($result){
@@ -52,14 +52,10 @@ if(isset($_GET['girl_hostel_id'])){
              <label for="price">Price</label>
              <input type="text" name="price" class="form-control" id="price" value ="<?php echo $row['price'] ?>">
          </div>
-         <div class="form-group">
-             <label for="hostel_image">Image</label>
-             <input type="file" name="hostel_image" id="hostel_image" value ="<?php echo $row['hostel_image'] ?>">
-         </div>
-     
-         <button class="btn btn-primary" type="submit" name="display" value="update">Update</button>
+       <button class="btn btn-primary" type="submit" name="display" value="update">Update</button>
          <div><a href="editgirlhostel.php" style="color:black;margin-left:6rem;margin-top:8rem;text-decoration:none;font-size:20px;"><i class="fa fa-arrow-left" aria-hidden="true" style="color:white;">GO BACK</i></a></div>
  </div>
+       
     </form>
  </div>
  <?php

@@ -11,7 +11,7 @@ session_start();
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="dist/css/styles.css" rel="stylesheet" />
+        <link href="dist/css/style.css" rel="stylesheet" />
     </head>
     <body>
         <div class="d-flex" id="wrapper">
@@ -31,19 +31,19 @@ session_start();
                 </div>
             </div>
             <!-- Page content wrapper-->
-            <div id="page-content-wrapper">
+        <div id="page-content-wrapper">
                 <!-- Top navigation-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom" >
                     <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                                 <li class="nav-item active"><a class="nav-link" href="#!">Log out</a></li>
-                                <li class="nav-item dropdown">
+                                <div class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <p class="dropdown-item" ><?php echo $_SESSION['username'];?></p>
+                                        <p class="dropdown-item" ><?php echo $_SESSION['firstname'];?></p>
                                         <p class="dropdown-item" ><?php echo $_SESSION['email'];?></p>
+                                        </div>
                                         <div class="dropdown-divider"></div>
                                     </div>
                                 </li>
@@ -52,8 +52,8 @@ session_start();
                     </div>
                 </nav>
                 <!-- Page content-->
-                <div class="container-fluid"  style="background: linear-gradient(45deg, #666, #b59fc4);height:100%;" >
-               <img src="image/admin.png">
+            <div class="container-fluid"  style="background: linear-gradient(45deg, #666, #b59fc4);height:100%;">
+              <img src='image/admin.png' alt="admin image">
            </div>
         </div>
 </div>
